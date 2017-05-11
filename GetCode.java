@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.yenchang.myapplication.R;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -37,8 +38,8 @@ public class GetCode extends Fragment {
     TextView tv;
     Button btnNav;
     String Data;
-    String result;
-    InputStream isr;
+    //String result;
+    //InputStream isr;
 
     public GetCode() {
     }
@@ -77,7 +78,7 @@ public class GetCode extends Fragment {
     class getData extends AsyncTask<String, Void, String> {
 
         //String username = LoginActivity.UserLoginTask.;
-        //String result = "";
+        String result = "";
 
         @Override
         protected String doInBackground(String... params) {
@@ -118,22 +119,18 @@ public class GetCode extends Fragment {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Data = "alallaa1";
             try {
                 JSONArray arr = new JSONArray(result);
-                Data = "LALALA1";
-                //JSONObject jObj = arr.getJSONObject(0);
-                Data = "LALALA2";
-                //Data = jObj.getString("username");
-                Data = "LALALA3";
+                JSONObject jObj = arr.getJSONObject(0);
+                Data = jObj.getString("code");
+                return Data;
             } catch (Exception e) {
                 // TODO: handle exception
-                Data = "1234";
                 Log.e("log_tag", "Error Parsing Data " + e.toString());
+                return "Error Parsing";
             }
 
             //return null;
-            return result;
         }
 
         @Override

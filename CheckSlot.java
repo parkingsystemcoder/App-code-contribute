@@ -123,20 +123,22 @@ public class CheckSlot extends Fragment {
                 JSONArray jArray = new JSONArray(result);
                 for (int i = 0; i < jArray.length(); i++) {
                     JSONObject json = jArray.getJSONObject(i);
-                    Data = Data + "\n" + json.getString("username") + " : " + json.getString("code");
+                    Data = Data + "\n" + json.getString("username") + "                 " + json.getString("code");
                 }
+                return Data;
             } catch (Exception e) {
                 // TODO: handle exception
                 Log.e("log_tag", "Error Parsing Data " + e.toString());
+                return "Error Parsing";
             }
 
             //return null;
-            return result;
+            //return result;
         }
 
         @Override
         protected void onPostExecute(String result) {
-            tv2.setText(Data);
+            tv2.setText(result);
         }
     }
 

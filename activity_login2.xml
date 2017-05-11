@@ -54,7 +54,7 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="password "
+                    android:hint="Password "
                     android:imeActionId="@+id/login"
                     android:imeActionLabel="Sign in"
                     android:imeOptions="actionUnspecified"
@@ -65,19 +65,24 @@
 
             <Button
                 android:id="@+id/email_sign_in_button"
-                style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Sign In"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:background="#00BFA5"/>
 
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="16.15"
-                android:text="Register" />
+                android:background="#F50057"
+                android:elevation="0dp"
+                android:text="Register"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

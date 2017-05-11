@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bmw">
+
+    <RelativeLayout
+        android:layout_width="344dp"
+        android:layout_height="551dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/payButton"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="66dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginRight="61dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Code: 71344" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/payButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="64dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Press PAY button to get code"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="26dp" />
 
-    <Button
-        android:id="@+id/payButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pay"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_marginRight="62dp"
-        android:layout_marginEnd="62dp"
-        android:onClick="updateCode" />
+        <Button
+            android:id="@+id/payButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="updateCode"
+            android:text="Pay"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
