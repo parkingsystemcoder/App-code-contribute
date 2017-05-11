@@ -1,21 +1,23 @@
-package com.example.tanchian.myapplication;
+package com.example.yenchang.myapplication;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.tanchian.myapplication.tabs_refragments.CheckSlot;
-import com.example.tanchian.myapplication.tabs_refragments.GetCode;
-import com.example.tanchian.myapplication.tabs_refragments.History;
-import com.example.tanchian.myapplication.tabs_refragments.Profile;
+import com.example.yenchang.myapplication.tabs_refragments.CheckSlot;
+import com.example.yenchang.myapplication.tabs_refragments.GetCode;
+import com.example.yenchang.myapplication.tabs_refragments.History;
 
 public class TabActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private int[] tabIcons = {android.R.drawable.ic_menu_search, android.R.drawable.ic_menu_myplaces, android.R.drawable.ic_menu_recent_history, android.R.drawable.ic_menu_save};
+    private int[] tabIcons = {android.R.drawable.ic_menu_search, android.R.drawable.ic_menu_myplaces, android.R.drawable.ic_menu_recent_history};
 
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class TabActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
-        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
+       // tabLayout.getTabAt(3).setIcon(tabIcons[3]);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -39,7 +41,7 @@ public class TabActivity extends AppCompatActivity {
         adapter.addFragment(CheckSlot.newInstance("this data is for check slot"), "CheckSlot");
         adapter.addFragment(GetCode.newInstance("this data is for check slot"), "GetCode");
         adapter.addFragment(History.newInstance("this data is for check slot"), "History");
-        adapter.addFragment(Profile.newInstance("this data is for check slot"), "BankAcc");
+        //adapter.addFragment(Profile.newInstance("this data is for check slot"), "BankAcc");
         viewPager.setAdapter(adapter);
     }
 }
